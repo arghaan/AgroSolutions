@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+    <texts>
+        <text name="category_syrius_agro" text="Syrius Agro s.r.o"/>
+
+        <text name="bulk_SB" text="Bulk swap body"/>
+        <text name="function_bulk_SB" text="Swap body for transporting bulk goods"/>
+        <text name="typeDesc_bulk_SB" text="Swap body for transporting bulk goods"/>
+
+        <text name="Plane" text="Навес"/>
+        <text name="configuration_Logo" text="Логотип"/>
+        <text name="configuration_syrius" text="Syrius Agro"/>
+        <text name="configuration_without" text="Без логотипа"/>
+
+        <text name="action_supportUp" text="Выдвинуть подставки"/>
+        <text name="action_supportDown" text="Сложить подставки"/>
+    </texts>
+</l10n>

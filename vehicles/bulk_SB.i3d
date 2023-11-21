@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="bulk_SB.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.4"/>
+  </Asset>
+
+  <Files>
+    <File fileId="16" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="5" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="22" filename="$data/shared/assets/assetLibraryDecals_diffuse.png"/>
+    <File fileId="23" filename="$data/shared/assets/assetLibraryDecals_normal.png"/>
+    <File fileId="20" filename="$data/shared/connectionHoses/connectors_normal.png"/>
+    <File fileId="21" filename="$data/shared/connectionHoses/connectors_vmask.dds"/>
+    <File fileId="3" filename="$data/shared/default_normal.dds"/>
+    <File fileId="24" filename="$data/shared/default_specular.png"/>
+    <File fileId="14" filename="textures/Dog_1024x1024.dds"/>
+    <File fileId="15" filename="textures/HoT_Inc.dds"/>
+    <File fileId="18" filename="textures/Syrius_cargo_2048x1024.dds"/>
+    <File fileId="11" filename="textures/bulk_gloss.dds"/>
+    <File fileId="10" filename="textures/bulk_normal.dds"/>
+    <File fileId="4" filename="textures/container_rahmen_specular.dds"/>
+    <File fileId="17" filename="textures/display.png"/>
+    <File fileId="12" filename="textures/nonfood_normal.dds"/>
+    <File fileId="13" filename="textures/nonfood_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="assetLibraryDecals_mat" materialId="148" customShaderId="5" customShaderVariation="colorMask">
+      <Texture fileId="22"/>
+      <Normalmap fileId="23"/>
+      <Glossmap fileId="24"/>
+      <CustomParameter name="RDT" value="1 1 20 20"/>
+      <CustomParameter name="colorMat0" value="0.5356 0.0254 0.0254 1"/>
+      <CustomParameter name="colorMat1" value="0.5356 0.0254 0.0254 8"/>
+      <CustomParameter name="colorMat2" value="0.673 0.4704 0.022 1"/>
+    </Material>
+    <Material name="back_mat" materialId="149">
+      <Texture fileId="14"/>
+    </Material>
+    <Material name="bulk_mat" materialId="150" diffuseColor="0.8 0.8 0.8 1" customShaderId="5" customShaderVariation="colorMask">
+      <Normalmap fileId="10"/>
+      <Glossmap fileId="11"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="colorMat0" value="0.93 0.921 0.921 0"/>
+      <CustomParameter name="colorMat1" value="0.275 0.319 0.347 4"/>
+      <CustomParameter name="colorMat2" value="0.851 0.482 0.001 5"/>
+      <CustomParameter name="colorMat3" value="0.023 0.025 0.028 5"/>
+    </Material>
+    <Material name="Chrom" materialId="151" diffuseColor="1 1 1 1">
+    </Material>
+    <Material name="colli" materialId="152" diffuseColor="1 1 1 1" specularColor="1 1 1">
+    </Material>
+    <Material name="connectors_mat" materialId="153" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="5" customShaderVariation="colorMask">
+      <Normalmap fileId="20"/>
+      <Glossmap fileId="21"/>
+      <CustomParameter name="RDT" value="1 1 20 20"/>
+      <CustomParameter name="colorMat0" value="0.5356 0.0254 0.0254 1"/>
+      <CustomParameter name="colorMat1" value="0.5356 0.0254 0.0254 8"/>
+      <CustomParameter name="colorMat2" value="0.673 0.4704 0.022 1"/>
+    </Material>
+    <Material name="cover_mat" materialId="154" diffuseColor="0.694118 0.694118 0.694118 1" customShaderId="5" customShaderVariation="colorMask">
+      <Normalmap fileId="10"/>
+      <Glossmap fileId="11"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="colorMat0" value="0.93 0.921 0.921 0"/>
+      <CustomParameter name="colorMat1" value="0.275 0.319 0.347 4"/>
+      <CustomParameter name="colorMat2" value="0.851 0.482 0.001 5"/>
+      <CustomParameter name="colorMat3" value="0.023 0.025 0.028 5"/>
+    </Material>
+    <Material name="d_mat" materialId="155">
+      <Texture fileId="17"/>
+    </Material>
+    <Material name="Decal_typ" materialId="156" customShaderId="16">
+      <Texture fileId="15"/>
+    </Material>
+    <Material name="default_mat" materialId="157" diffuseColor="0.494118 0.494118 0.494118 1">
+      <Normalmap fileId="3"/>
+    </Material>
+    <Material name="lambert1" materialId="158" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="nonfood_mat" materialId="159" diffuseColor="0.8 0.8 0.8 1" customShaderId="5" customShaderVariation="colorMask">
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="colorMat0" value="0.93 0.921 0.921 0"/>
+      <CustomParameter name="colorMat1" value="0.323 0.305 0.309 4"/>
+    </Material>
+    <Material name="plane_1" materialId="160">
+      <Texture fileId="18"/>
+    </Material>
+    <Material name="rahmen_mat" materialId="161" diffuseColor="0.694118 0.694118 0.694118 1" customShaderId="5" customShaderVariation="colorMask">
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="colorMat0" value="0.93 0.921 0.921 0"/>
+      <CustomParameter name="colorMat1" value="0.93 0.921 0.921 0"/>
+      <CustomParameter name="colorMat2" value="0.275 0.319 0.347 4"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="bulk_SB.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <Shape shapeId="1" name="main_component_1" dynamic="true" compound="true" collisionMask="2109442" clipDistance="300" nodeId="202" materialIds="151" castsShadows="true" receiveShadows="true" nonRenderable="true" distanceBlending="false">
+        <Shape shapeId="2" name="Container_Rahmen" translation="0 1.49788 0" scale="1 1 1.5" nodeId="203" materialIds="161" castsShadows="true" receiveShadows="true">
+          <TransformGroup name="support" nodeId="204">
+            <Shape shapeId="3" name="FussRV" translation="-0.835 0.025 2.489" nodeId="205" materialIds="161" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="4" name="strebe1" translation="-0.513948 -0.467927 0" rotation="60 -0 0" nodeId="206" materialIds="161" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="5" name="Fuss_wb1" translation="-0.562 -0.739 0" nodeId="207" materialIds="161" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+            <Shape shapeId="6" name="FussLV" translation="0.835 0.025017 2.48882" nodeId="208" materialIds="161" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="7" name="strebe2" translation="0.513894 -0.468 0" rotation="60 0 0" nodeId="209" materialIds="161" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="5" name="Fuss_wb4" translation="0.562 -0.739 0" nodeId="210" materialIds="161" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+            <Shape shapeId="3" name="FussHR" translation="-0.835 0.025017 -2.499" nodeId="211" materialIds="161" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="4" name="strebe3" translation="-0.513948 -0.467927 0" rotation="-60 0 0" nodeId="212" materialIds="161" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="5" name="Fuss_wb2" translation="-0.562 -0.739 0" nodeId="213" materialIds="161" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+            <Shape shapeId="6" name="FussHL" translation="0.835 0.025 -2.49918" nodeId="214" materialIds="161" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="7" name="strebe4" translation="0.513894 -0.468 0" rotation="-60 0 0" nodeId="215" materialIds="161" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="5" name="Fuss_wb3" translation="0.562 -0.739 0" nodeId="216" materialIds="161" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+            <TransformGroup name="FussCollis" nodeId="217">
+              <Shape shapeId="8" name="FusskolliRV" translation="-1.52295 -1.075 2.496" compoundChild="true" collisionMask="8194" clipDistance="300" nodeId="218" materialIds="151" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <Shape shapeId="8" name="FusskolliLV" translation="1.53261 -1.075 2.496" compoundChild="true" collisionMask="8194" clipDistance="300" nodeId="219" materialIds="151" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <Shape shapeId="8" name="FusskolliRH" translation="-1.52604 -1.075 -2.496" compoundChild="true" collisionMask="8194" clipDistance="300" nodeId="220" materialIds="151" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <Shape shapeId="8" name="FusskolliLH" translation="1.55454 -1.075 -2.496" compoundChild="true" collisionMask="8194" clipDistance="300" nodeId="221" materialIds="151" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="attacher" translation="0 0 1.2395" nodeId="222">
+            <TransformGroup name="attacherJoint" translation="0 -0.036 0" nodeId="223"/>
+            <TransformGroup name="attacher_telehandler_l" nodeId="224">
+              <TransformGroup name="Joint1" translation="0 2.658 3.449" rotation="-180 -90 -180" nodeId="225"/>
+            </TransformGroup>
+            <TransformGroup name="attacher_telehandler_r" rotation="-180 0 -180" nodeId="226">
+              <TransformGroup name="Joint3" translation="0 2.658 3.449" rotation="-180 -90 -180" nodeId="227"/>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="supportcollis" nodeId="228"/>
+          <TransformGroup name="transform" translation="0 -0.0483576 0" scale="1 1 0.82" nodeId="229">
+            <Shape shapeId="9" name="Colli_boden" translation="0 0.100992 0" visibility="false" compoundChild="true" collisionMask="2109442" nodeId="230" materialIds="151" nonRenderable="true" distanceBlending="false"/>
+            <Shape shapeId="10" name="Backwall_colli" translation="-1.50145e-06 1.32468 3.48218" visibility="false" compoundChild="true" collisionMask="2109442" nodeId="231" materialIds="151" nonRenderable="true" distanceBlending="false"/>
+            <Shape shapeId="11" name="colli_rahmen_pfosten" visibility="false" compoundChild="true" collisionMask="2109442" nodeId="232" materialIds="152" nonRenderable="true"/>
+            <Shape shapeId="12" name="sidewall_colli" translation="-1.269 1.35591 -0.0163076" visibility="false" compoundChild="true" collisionMask="2109442" nodeId="233" materialIds="151" nonRenderable="true" distanceBlending="false"/>
+            <Shape shapeId="12" name="sidewall_colli" translation="1.28985 1.35591 -0.0163076" visibility="false" compoundChild="true" collisionMask="2109442" nodeId="234" materialIds="151" nonRenderable="true" distanceBlending="false"/>
+          </TransformGroup>
+          <Shape shapeId="13" name="bulk_wb" translation="0 0.093 0" nodeId="235" materialIds="150" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="cover" nodeId="236">
+              <Shape shapeId="14" name="Planen_rohr" translation="0 2.29752 3.22961" nodeId="237" materialIds="154" castsShadows="true" receiveShadows="true">
+                <Shape shapeId="15" name="Plane_gewickelt" scale="1 5 5" nodeId="238" materialIds="154" castsShadows="true" receiveShadows="true"/>
+              </Shape>
+              <Shape shapeId="16" name="Plane" translation="0 2.51656 3.19354" nodeId="239" materialIds="154" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="17" name="planen_fuehrung" translation="-4.2272e-09 2.52148 -3.36141" rotation="7.85476e-06 90 7.8401e-06" nodeId="240" materialIds="154" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+            <Shape shapeId="18" name="Planenende" translation="0 2.468 3.21938" nodeId="241" materialIds="154" castsShadows="true" receiveShadows="true"/>
+            <TransformGroup name="doors" translation="-0.0195384 -0.088 0" nodeId="242">
+              <Shape shapeId="19" name="Door_right" translation="-1.12782 1.26471 -3.532" nodeId="243" materialIds="159" castsShadows="true" receiveShadows="true">
+                <Shape shapeId="20" name="Rod_right" translation="0.651008 -0.225 -0.0186606" nodeId="244" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="21" name="Colli_door" translation="0.578786 0.0570563 0.00350168" visibility="false" compoundChild="true" collisionMask="2109442" nodeId="245" materialIds="151" nonRenderable="true" distanceBlending="false"/>
+                <Shape shapeId="22" name="Right" translation="1.14736 0.011891 -0.0558392" rotation="0 -90 0" nodeId="246" materialIds="149"/>
+              </Shape>
+              <Shape shapeId="23" name="Door_left" translation="1.16774 1.26471 -3.532" nodeId="247" materialIds="159" castsShadows="true" receiveShadows="true">
+                <Shape shapeId="24" name="Rod_left" translation="-0.652253 -0.225 -0.014" nodeId="248" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="21" name="Colli_door" translation="-0.579252 0.0570563 0.00350168" visibility="false" compoundChild="true" collisionMask="2109442" nodeId="249" materialIds="151" nonRenderable="true" distanceBlending="false"/>
+                <Shape shapeId="25" name="Left" translation="-1.1479 0.0119114 -0.0544052" rotation="0 -90 0" nodeId="250" materialIds="149"/>
+              </Shape>
+            </TransformGroup>
+            <Shape shapeId="26" name="Opener" translation="-0.494033 1.21457 -3.537" nodeId="251" materialIds="159" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="26" name="Opener" translation="0.496071 1.215 -3.537" nodeId="252" materialIds="159" castsShadows="true" receiveShadows="true"/>
+            <TransformGroup name="transform" nodeId="253">
+              <Shape shapeId="27" name="Typenschild" translation="0.200995 0.233563 3.50803" scale="0.920276 1 1" nodeId="254" materialIds="156" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="28" name="display_fill" translation="-0.202714 0.2364 3.51227" scale="0.921185 1 1" nodeId="255" materialIds="155" distanceBlending="false"/>
+              <TransformGroup name="hudFillLevel" translation="-0.131891 0.232786 3.51573" clipDistance="35" nodeId="256"/>
+            </TransformGroup>
+            <TransformGroup name="transform" nodeId="257">
+              <Shape shapeId="29" name="SideRight.000" translation="1.26345 1.24691 -0.00469962" rotation="-180 -90 -180" nodeId="258" materialIds="160"/>
+              <Shape shapeId="30" name="SideRight.001" translation="-1.26542 1.2414 -0.00996703" rotation="0 -90 0" nodeId="259" materialIds="160"/>
+            </TransformGroup>
+            <TransformGroup name="connectors" nodeId="260">
+              <TransformGroup name="strom" translation="0.373197 0 0" nodeId="261">
+                <Shape shapeId="31" name="electric" translation="-0.178081 0.0782145 3.48755" rotation="180 0 180" clipDistance="50" nodeId="262" materialIds="153" castsShadows="true" receiveShadows="true">
+                  <TransformGroup name="referencePoint" translation="0 0 -0.0439611" nodeId="263">
+                    <Shape shapeId="32" name="electric" translation="0 0 -0.0663508" clipDistance="50" nodeId="264" materialIds="153" castsShadows="true" receiveShadows="true">
+                      <TransformGroup name="electricCable" rotation="180 0 180" nodeId="265"/>
+                    </Shape>
+                  </TransformGroup>
+                  <Shape shapeId="33" name="cab" translation="0 0.0284315 -0.040487" rotation="-90 0 0" clipDistance="50" nodeId="266" materialIds="153" castsShadows="true" receiveShadows="true"/>
+                  <Shape shapeId="34" name="decals" translation="0.000168574 -0.00623945 -0.0219512" clipDistance="30" nodeId="267" materialIds="148" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+                </Shape>
+              </TransformGroup>
+            </TransformGroup>
+          </Shape>
+          <TransformGroup name="technical" nodeId="268">
+            <TransformGroup name="fillVolume" translation="-0.0157323 -0.629 0" nodeId="269">
+              <Shape shapeId="35" name="fillVolume" translation="-0.0355802 0.821 0.0593849" clipDistance="300" nodeId="270" materialIds="158" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            </TransformGroup>
+            <TransformGroup name="unloadInfo" translation="2.84217e-16 0 0" nodeId="271">
+              <TransformGroup name="unloadInfoBack" translation="1.14501e-07 3.5 -0.065" rotation="0 -90 0" nodeId="272"/>
+            </TransformGroup>
+            <TransformGroup name="heightNodes" nodeId="273">
+              <TransformGroup name="heightNodesBack" translation="-1.13687e-15 1.78346 -3.4266" nodeId="274">
+                <TransformGroup name="fillVolumeHeightNodeBack1" translation="0.96107 0 0.022" nodeId="275"/>
+                <TransformGroup name="fillVolumeHeightNodeBack2" translation="-0.961 0 0.022" nodeId="276"/>
+              </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="dischargeNodes" nodeId="277">
+              <TransformGroup name="dischargeNodeBack" translation="-7.39262e-08 0.802 -4.34561" rotation="0 180 0" nodeId="278"/>
+            </TransformGroup>
+            <TransformGroup name="ai" translation="-3.69549e-08 -1.2365 2.81855" nodeId="279">
+              <Shape shapeId="36" name="exactFillRootNode2" translation="0 3.52788 -2.74677" kinematic="true" compound="true" collisionMask="1073741824" nodeId="280" materialIds="158" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <TransformGroup name="fillAutoAimTarget2" translation="-1.42109e-15 3.67421 -2.84516" nodeId="281"/>
+            </TransformGroup>
+            <TransformGroup name="effect" translation="-3.69549e-08 -0.0243551 -1.19682" scale="1 1 0.666667" nodeId="282">
+              <TransformGroup name="particleBack" translation="0 0.0983989 -3.5663" nodeId="283">
+                <TransformGroup name="effectNodesBack" clipDistance="300" nodeId="284">
+                  <Shape shapeId="37" name="grainEffectBack" translation="0 -0.000619842 0.0564952" clipDistance="300" nodeId="285" materialIds="157" castsShadows="true" receiveShadows="true"/>
+                  <Shape shapeId="38" name="smokeEffectBack" translation="1.42109e-15 0 0" clipDistance="300" nodeId="286" materialIds="157" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                </TransformGroup>
+                <TransformGroup name="particleNode" translation="0 0.085 0" clipDistance="300" nodeId="287">
+                  <Shape shapeId="39" name="particleEmitter" translation="0 0.545292 0.0979693" clipDistance="300" nodeId="288" materialIds="158" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                </TransformGroup>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+        </Shape>
+      </Shape>
+  </Scene>
+
+</i3D>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="77">
+    <author>Syrius</author>
+    <version>1.0.0.0</version>
+    <iconFilename>mod_icon.dds</iconFilename>
+	<multiplayer supported="true" />
+	<l10n filenamePrefix="translations/l10n"/>
+
+	<title>
+        <en>Syrius Agro Solutions</en>
+    </title>
+	
+    <description>
+        <en>Syrius Agro Solutions</en>
+	</description>
+	
+	<specializations>
+<!--		<specialization name="AdditionalDesignConfigs" className="AdditionalDesignConfigsSpecialization" filename="scripts/AdditionalDesignConfigsSpecialization.lua"/>-->
+<!--		<specialization name="autoLoadWoodForwarder" className="AutoLoadWoodForwarder" filename="scripts/autoLoadWoodForwarder.lua"/>-->
+	</specializations>
+
+	<vehicleTypes>
+<!--		<type name="augerWagon" parent="baseTipper" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua" >-->
+<!--			<specialization name="pipe" />	-->
+<!--		</type>-->
+<!--		<type name="tgx" parent="tractor" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">-->
+<!--			<specialization name="foldable" />	-->
+<!--		</type>-->
+<!--		<type name="tgm" parent="carFillable" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">-->
+<!--		</type>-->
+<!--		<type name="wb_trailer" parent="trailer" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">-->
+<!--		</type>-->
+<!--		<type name="wbSystem" parent="fillableImplement" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">-->
+<!--			<specialization name="tensionBelts" />-->
+<!--			<specialization name="trailer" />-->
+<!--			<specialization name="livestockTrailer" />-->
+<!--		</type>-->
+<!--		<type name="PalletAutoLoaderTrailer" parent="trailer" filename="$dataS/scripts/vehicles/Vehicle.lua">-->
+<!--			<specialization name="FS22_aPalletAutoLoader.aPalletAutoLoader"/>-->
+<!--		</type>-->
+<!--		<type name="ScaniaBDF" parent="tractor" filename="$dataS/scripts/vehicles/Vehicle.lua">-->
+<!--			<specialization name="AdditionalDesignConfigs"/>-->
+<!--        </type>-->
+<!--		<type name="autoLoadWoodForwarder" parent="baseAttachable" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">-->
+<!--            <specialization name="ikChains"/>-->
+<!--            <specialization name="tensionBelts"/>-->
+<!--            <specialization name="dynamicMountAttacher"/>-->
+<!--            <specialization name="autoLoadWoodForwarder"/>-->
+<!--			<specialization name="turnOnVehicle"/>-->
+<!--        </type>-->
+	</vehicleTypes>
+	<extraSourceFiles>
+        <sourceFile filename="scripts/AddShopCategory.lua"/>
+    </extraSourceFiles>
+    <storeItems>
+		<storeItem rootNode="vehicle" xmlFilename="xml/bulk_SB.xml"/>
+		<storeItem xmlFilename="xml/BigX_byTAZ/headers/headerGrain18m.xml"/>
+		<storeItem xmlFilename="xml/BigX_byTAZ/headers/headerGrass18m.xml"/>
+		<storeItem xmlFilename="xml/BigX_byTAZ/headers/headerPoplar18m.xml"/>
+        <!-- <storeItem xmlFilename="haeckslerschneidwerk/schneidwerkPappeln18m.xml"/>
+        <storeItem xmlFilename="haeckslerschneidwerk/schneidwerkZuckerrohr18m.xml"/> -->
+    </storeItems>
+	
+	<brands>
+        <brand name="SYRIUS" title="Syrius Agriculture Solutions" image="brand.dds"/>
+    </brands>
+	
+<!--	<actions>-->
+<!--        <action name="AUTOLOADWOOD_TOGGLE_AUTO" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_TOGGLE_UNLOAD" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_TOGGLE_SIDE" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_TOGGLE_PILES" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_SWITCH_PILE" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_TOGGLE_LOAD_MARKER" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_TOGGLE_UNLOAD_MARKER" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_UNLOAD_MARKER_MOVE" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_UNLOAD_MARKER_SCALE" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_UNLOAD_MARKER_ROTATE" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--        <action name="AUTOLOADWOOD_TOGGLE_HELP" category="VEHICLE" axisType="HALF" ignoreComboMask="false"/>-->
+<!--    </actions>-->
+<!--    <inputBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_TOGGLE_AUTO">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_b"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_TOGGLE_UNLOAD">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_z"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_TOGGLE_SIDE">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_o"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_TOGGLE_PILES">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_enter"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_SWITCH_PILE">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_period"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_TOGGLE_LOAD_MARKER">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_multiply"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_TOGGLE_UNLOAD_MARKER">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_divide"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_UNLOAD_MARKER_MOVE">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_KP_minus"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_UNLOAD_MARKER_SCALE">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_KP_plus"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_UNLOAD_MARKER_ROTATE">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_KP_0"/>-->
+<!--        </actionBinding>-->
+<!--        <actionBinding action="AUTOLOADWOOD_TOGGLE_HELP">-->
+<!--            <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_t"/>-->
+<!--        </actionBinding>-->
+<!--    </inputBinding>-->
+</modDesc>

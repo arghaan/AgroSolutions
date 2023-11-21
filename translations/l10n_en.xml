@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+    <texts>
+        <text name="category_syrius_agro" text="Syrius Agro s.r.o"/>
+
+        <text name="bulk_SB" text="Bulk swap body"/>
+        <text name="function_bulk_SB" text="Swap body for transporting bulk goods"/>
+        <text name="typeDesc_bulk_SB" text="Swap body for transporting bulk goods"/>
+
+        <text name="Plane" text="Canopy"/>
+        <text name="configuration_Logo" text="Logo"/>
+        <text name="configuration_syrius" text="Syrius Agro"/>
+        <text name="configuration_without" text="without logo"/>
+
+        <!--		<text name="category_cargosystem_trucks" text="Cargo System Trucks"/>-->
+        <!--		<text name="category_cargosystem_trailer" text="Cargo System Trailers / Semi-trailers"/>-->
+        <!--        <text name="category_cargosystem_wbs" text="Cargo System Swap Bodies"/>-->
+        <!--		-->
+        <!--		&lt;!&ndash; Funktionen &ndash;&gt;-->
+        <!--		<text name="wb_seed" text="Seed Support WB"/>-->
+        <!--		<text name="function_wb_seed" text="Support WB for filling seed drill, fertiliser / lime spreader"/>-->
+        <!--		<text name="wb_seedbed" text="Seedbed WB"/>-->
+        <!--		<text name="function_wb_schubboden" text="Schubboden WB zum Transport von Silage"/>-->
+        <!--		<text name="action_supportUp" text="Fold in supports"/>-->
+        <!--		<text name="action_supportDown" text="Fold out supports"/>-->
+        <!--		<text name="nonfood_Trailer" text="Trailer for pallets"/>-->
+        <!--		<text name="function_nonfood_Trailer" text="Nonfood Trailer"/>-->
+        <!--        <text name="typeDesc_nonfood_Trailer" text="Nonfood Trailer"/>-->
+        <!--		<text name="function_wb_dropside" text="Swap body for transporting bales and pallets"/>-->
+        <!--		<text name="typeDesc_wb_dropside" text="DropSide WB"/>-->
+        <!--		<text name="wb_fuel" text="Petrol Station Swap Body"/>-->
+        <!--        <text name="function_wb_fuel" text="Swap body for the transport of diesel and the refuelling of vehicles"/>-->
+        <!--		<text name="typeDesc_wb_fuel" text="Diesel WB"/>-->
+        <!--		<text name="wb_open" text="Open Swap Body"/>-->
+        <!--        <text name="function_wb_open" text="Swap body for transporting bales and pallets"/>-->
+        <!--		<text name="typeDesc_wb_open" text="Open WB"/>-->
+        <!--        <text name="wb_wood" text="Wood Swapbody"/>-->
+        <!--        <text name="function_wb_wood" text="Swap body for transporting wood"/>-->
+        <!--		<text name="typeDesc_wb_wood" text="Wood WB"/>-->
+        <!--		<text name="wb_wood_autoload" text="Wood Swapbody Autoload"/>-->
+        <!--        <text name="function_wb_wood_autoload" text="Swap body for transporting wood"/>-->
+        <!--        <text name="wb_tandem" text="Swap body tandem trailer"/>-->
+        <!--		<text name="function_wb_tandem" text="Tandem Trailer for Swap Bodies"/>-->
+        <!--        <text name="typeDesc_wb_tandem" text="Tandemtrailer"/>-->
+        <!--		<text name="attacherHigh" text="high drawbar"/>-->
+        <!--        <text name="attacherLow" text="low drawbar"/>-->
+        <!--		<text name="wb_tandem_low" text="swap body tandem trailer"/>-->
+        <!--		<text name="function_wb_tandem_low" text="Tandem Trailer for Swap Bodies (Tractor)"/>-->
+        <!--		<text name="cooling_Trailer" text="Refrigerated Trailer for Pallets"/>-->
+        <!--		<text name="function_cooling_Trailer" text="Refrigerated Trailer with Frigoblock Cooling"/>-->
+        <!--        <text name="typeDesc_cooling_Trailer" text="Refrigerated semi-trailer"/>-->
+        <!--		<text name="hot_tgx" text="HoT TGX 26.640"/>-->
+        <!--		<text name="function_tgx" text="For transport for swap bodies"/>-->
+        <!--        <text name="typeDesc_tgx" text="HoT TGX 26.640"/>-->
+        <!--		<text name="hot_tgx_sattel" text="HoT TGX 26.640 Sattel"/>-->
+        <!--		<text name="function_tgx_sattel" text="For transport for trailers"/>-->
+        <!--        <text name="typeDesc_tgx_sattel" text="HoT TGX 26.640 Saddle"/>-->
+        <!--		<text name="hot_tgm" text="HoT TGM 18.290 refrigerated cargo truck"/>-->
+        <!--		<text name="function_tgm" text="Refrigerated Truck with Frigoblock Cooling"/>-->
+        <!--        <text name="typeDesc_tgm" text="TGM 18.290 LKW"/>-->
+
+        <!--		<text name="wb_tank" text="Tank Swap Body"/>-->
+        <!--        <text name="function_wb_tank" text="Swap body for transporting liquids"/>-->
+        <!--		<text name="typeDesc_wb_tank" text="WB Tank"/>-->
+        <!--		<text name="wb_tank2" text="Double tank swap body"/>-->
+        <!--        <text name="function_wb_tank2" text="Double tank swap body for transporting liquids"/>-->
+        <!--		<text name="typeDesc_wb_tank2" text="Double Tank WB"/>-->
+        <!--		<text name="wb_livestock" text="Animal transport swap body"/>-->
+        <!--        <text name="function_wb_livestock" text="Animal Transport Swap Body"/>-->
+        <!--		<text name="typeDesc_wb_livestock" text="Animal WB"/>-->
+        <!--		<text name="wb_silo" text="Silo swap body"/>-->
+        <!--        <text name="function_wb_silo" text="Swap body for transporting animal feed"/>-->
+        <!--		<text name="typeDesc_wb_silo" text="Silo WB"/>-->
+        <!--		<text name="wb_nonfood" text="Nonfood swap body"/>-->
+        <!--        <text name="function_wb_nonfood" text="Swap body for transporting production goods (without refrigeration)"/>-->
+        <!--		<text name="typeDesc_wb_nonfood" text="Nonfood WB"/>-->
+        <!--		<text name="wb_transport" text="Transport swap body"/>-->
+        <!--        <text name="function_wb_transport" text="Swap body for transporting pallets"/>-->
+        <!--		<text name="typeDesc_wb_transport" text="Transport WB"/>-->
+        <!--		<text name="wb_cooling" text="Refrigerated goods Swap body"/>-->
+        <!--        <text name="function_wb_cooling" text="Refrigerated swap body for transporting production goods (with Frigoblock cooling)"/>-->
+        <!--		<text name="typeDesc_wb_cooling" text="Refrigerated goods WB"/>-->
+        <!--		<text name="backAttacherTrailerHighLow" text="High and Low Trailer Hitch"/>-->
+        <!--		<text name="action_markerOn" text="Marker on"/>-->
+        <!--		<text name="action_markerOff" text=" Marker off"/>-->
+        <!--		<text name="action_openLoading" text="Open load compartment"/>-->
+        <!--		<text name="action_closeLoading" text="Close load compartment"/>-->
+        <!--		<text name="wb_energy" text="Energy Swapbody"/>-->
+        <!--        <text name="function_wb_energy" text="Swap body for transporting energy"/>-->
+        <!--		<text name="typeDesc_wb_energy" text="Energy WB"/>-->
+        <!--		<text name="wb_flat" text="Autostack WB"/>-->
+        <!--		<text name="function_wb_flat" text="Swapbody with Autostack Sytem"/>-->
+        <!--		<text name="typeDesc_wb_flat" text="Swapbody Autostack"/>-->
+        <!--		<text name="flat_Trailer" text="Autostack Trailer"/>-->
+        <!--		<text name="function_flat_Trailer" text="Trailer with Autostack Sytem"/>-->
+        <!--		<text name="typeDesc_flat_Trailer" text="Trailer Autostack"/>-->
+        <!--		<text name="name_SemiShort" text="Swap Bodies Semitrailer"/>-->
+        <!--		<text name="function_SemiShort" text="Semi-trailer for Swap Bodies"/>-->
+        <!--		<text name="typeDesc_wb_Semi" text="Semi-trailer"/>-->
+        <!--		<text name="action_activate" text="aktivieren"/>-->
+        <!--		<text name="action_deactivate" text="deaktivieren"/>-->
+        <!--		-->
+        <!--		&lt;!&ndash; Konfiguration &ndash;&gt;-->
+        <!--		<text name="Lampen" text="Lamps"/>-->
+        <!--		<text name="Schoch" text="Lamps Schoch"/>-->
+        <!--		<text name="Construction" text="Lamps Construction"/>-->
+        <!--		<text name="ConstructionRuL" text="Lamps Construction with RuL"/>-->
+        <!--		<text name="roofgrill" text="Lamps Short"/>-->
+        <!--		<text name="Exhaust" text="Exhaust"/>-->
+        <!--		<text name="WindowTrim" text="Window Trim"/>-->
+        <!--		<text name="StoneGuard" text="Stone Guard"/>-->
+        <!--		<text name="BullBar" text="Bull Bar"/>    -->
+        <!--		<text name="BottomGrill" text="Bottom Grill"/>-->
+        <!--		<text name="Sunshield" text="Sunshield"/>-->
+
+        <!--		<text name="Livery" text="Livery"/>-->
+        <!--		<text name="without" text="without Livery"/>-->
+        <!--		<text name="withGriffinWhite" text="Griffin White"/>-->
+        <!--		<text name="withGriffinBlack" text="Griffin Black"/>-->
+        <!--		<text name="withGriffinColor" text="Griffin Colorchoice"/>-->
+        <!--		<text name="configuration_HoT" text="HoT Cooling"/>-->
+        <!--		<text name="configuration_Frigo_white" text="Frigoblock white"/>-->
+        <!--		<text name="configuration_Frigo_blue" text="Frigoblock blue"/>-->
+        <!--		<text name="configuration_hl" text="Hirschfeld Logistic"/>-->
+        <!--		<text name="configuration_va" text="Vision Aqua Logo"/>-->
+        <!--		<text name="configuration_HoT_logo" text="HoT Logo"/>-->
+        <!--		<text name="configuration_sattelstandard" text="Saddle plate standard"/>-->
+        <!--		<text name="configuration_sattelhot" text="Saddle plate HoT"/>-->
+        <!--		<text name="Accessoires" text="Accessoires"/>-->
+        <!--		<text name="Super" text="Super logo"/>-->
+        <!--		<text name="IntakeChrome" text="Chrome stripes"/>-->
+        <!--		<text name="everything" text="Super logo + chrome stripes"/>-->
+        <!--		<text name="configuration_autoload" text="Autostack Function"/>-->
+        <!--		<text name="configuration_backdecal" text="Back Sticker"/>-->
+        <!--		<text name="configuration_long" text="Long Vehicle"/>-->
+        <!--		<text name="configuration_over" text="Overlength"/>-->
+        <!--		<text name="Bordwand" text="Drop Sides"/>-->
+        <!--		<text name="Warnleuchten" text="Warning lights"/>-->
+        <!--		<text name="configuration_without_beacon" text="without"/>-->
+        <!--		<text name="configuration_rundum" text="Beaconlights"/>-->
+        <!--		<text name="configuration_blitzer" text="Flasher"/>-->
+        <!--		-->
+        <!--		&lt;!&ndash; Reifen &ndash;&gt;-->
+        <!--		<text name="configuration_ridemax" text="Agricultural Tires"/>-->
+        <!--		<text name="configuration_ridemax2" text="Agricultural Tires rear steering axle"/>-->
+        <!--		<text name="configuration_ridemaxWinter" text="Agricultural Tires Winter"/>-->
+        <!--		<text name="configuration_valueAgro" text="Agricultural Tires"/>-->
+        <!--		<text name="configuration_valueAgro2" text="Agricultural Tires rear steering axle"/>-->
+        <!--		<text name="configuration_steering_Back" text="Rear steering axle"/>-->
+        <!--		<text name="configuration_ContiCrossTrac" text="CrossTrac"/>	-->
+        <!--		<text name="configuration_ContiCrossTracwinter" text="CrossTrac Winter"/>-->
+        <!--		<text name="configuration_valueDefaultwinter" text="Standard Tires Winter"/>-->
+        <!--		<text name="configuration_valueAgrowinter" text="Agricultural Tires Winter"/>-->
+        <!--		<text name="configuration_Dual" text="Double Tires"/>-->
+        <!--		-->
+        <!--		&lt;!&ndash; Autoloader &ndash;&gt;-->
+        <!--		<text name="autoloader" text="Autoloader"/>-->
+        <!--		<text name="noAutoloaderName" text="whitout"/>-->
+        <!--		<text name="withAutoloaderPallets" text="Pallets 1 layer"/>-->
+        <!--		<text name="withAutoloaderPallets2" text="Pallets 2 layers"/>-->
+        <!--		<text name="withAutoloaderBales" text="Bales 2 Layers"/>-->
+        <!--		<text name="withAutoloaderBales1" text="Bales 3 Layers"/>-->
+        <!--		-->
+        <!--		<text name="input_AUTOLOADWOOD_TOGGLE_AUTO" text="AL: Autoload wood (On/Off)"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_TOGGLE_UNLOAD" text="AL: Unload wood (On/Off)"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_TOGGLE_SIDE" text="AL: Autoload toggle sides (left/right"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_TOGGLE_PILES" text="AL: Change number of piles"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_SWITCH_PILE" text="AL: Switch pile"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_TOGGLE_LOAD_MARKER" text="AL: Toggle load marker (show/hide)"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_TOGGLE_UNLOAD_MARKER" text="AL: Toggle unload marker (show/hide)"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_UNLOAD_MARKER_MOVE" text="AL: Shift unloading position"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_UNLOAD_MARKER_SCALE" text="AL: Resize unloading position"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_UNLOAD_MARKER_ROTATE" text="AL: Rotate unloading position"/>-->
+        <!--		<text name="input_AUTOLOADWOOD_TOGGLE_HELP" text="AL: Toggle help (show/hide)"/>-->
+        <!--		<text name="AUTOLOADWOOD_START_AUTOLOAD" text="AL: Start autoload wood"/>-->
+        <!--		<text name="AUTOLOADWOOD_STOP_AUTOLOAD" text="AL: Stop autoload wood"/>-->
+        <!--		<text name="AUTOLOADWOOD_START_UNLOAD" text="AL: Start unload"/>-->
+        <!--		<text name="AUTOLOADWOOD_STOP_UNLOAD" text="AL: Stop unload"/>-->
+        <!--		<text name="AUTOLOADWOOD_SWITCH_RIGHT" text="AL: Switch autoload to right"/>-->
+        <!--		<text name="AUTOLOADWOOD_SWITCH_LEFT" text="AL: Switch autoload to left"/>-->
+        <!--		<text name="AUTOLOADWOOD_SHOW_LOAD_MARKER" text="AL: Show loading position"/>-->
+        <!--		<text name="AUTOLOADWOOD_HIDE_LOAD_MARKER" text="AL: Hide loading position"/>-->
+        <!--		<text name="AUTOLOADWOOD_SHOW_UNLOAD_MARKER" text="AL: Show unloading position"/>-->
+        <!--		<text name="AUTOLOADWOOD_HIDE_UNLOAD_MARKER" text="AL: Hide unloading position"/>-->
+        <!--		<text name="AUTOLOADWOOD_SHOW_POSITION" text="AL: Show position"/>-->
+        <!--		<text name="AUTOLOADWOOD_HIDE_POSITION" text="AL: Hide position"/>-->
+        <!--		<text name="AUTOLOADWOOD_SHOW_HELP" text="AL: Show help for autoload"/>-->
+        <!--		<text name="AUTOLOADWOOD_HIDE_HELP" text="AL: Hide help for autoload"/>-->
+        <!--		<text name="AUTOLOADWOOD_Unfold_additional_forks" text="AL: Unfold additional forks"/>-->
+        <!--		<text name="AUTOLOADWOOD_Fold_additional_forks" text="AL: Fold additional forks"/>-->
+        <!--		<text name="AUTOLOADWOOD_COUNT" text="Autoload Wood - Logs loaded:"/>-->
+        <!--		<text name="AUTOLOADWOOD_NO_LOGS" text="Autoload Wood - No logs loaded"/>-->
+        <!--		-->
+        <!--		&lt;!&ndash; Farbwahl &ndash;&gt;-->
+        <!--		<text name="Pipe" text="Pipe colour"/>-->
+        <!--		<text name="grillcolor1" text="Front Grill 1"/>-->
+        <!--		<text name="grillcolor2" text="Front Grill 2"/>-->
+        <!--		<text name="grillcolor3" text="Front Inlay"/>-->
+        <!--		<text name="grillcolor4" text="Front Window Frame"/>-->
+        <!--		<text name="liveryColor" text="Livery Color"/>-->
+        <!--		<text name="steel" text="Steel"/>-->
+        <!--		<text name="black" text="Black"/>-->
+        <!--		<text name="red" text="Red"/>-->
+        <!--		<text name="redsteel" text="Red steel"/>-->
+        <!--		<text name="Weissgrün" 					text="Pale green new"/>		-->
+        <!--		<text name="WeissgrünOLD" 				text="Pale green old"/>-->
+        <!--		<text name="WeissgrünMATTE"				text="Pale green matte"/>-->
+        <!--		<text name="WeissgrünSATIN"				text="Pale green Satin"/>	-->
+        <!--		<text name="GREEN" 						text="Green new"/>		-->
+        <!--		<text name="GREENOLD" 					text="Green old"/>-->
+        <!--		<text name="GREENMATTE"					text="Green matte"/>-->
+        <!--		<text name="GREENSATIN"					text="Green Satin"/>	-->
+        <!--		<text name="FLIEGLgreen" 				text="Fliegl green new"/> 		-->
+        <!--		<text name="FLIEGLgreenOLD" 			text="Fliegl green old"/> 		-->
+        <!--		<text name="FLIEGLgreenMATTE" 			text="Fliegl green matte"/> 	-->
+        <!--		<text name="FLIEGLgreenSATIN" 			text="Fliegl green Satin"/> 	-->
+        <!--		<text name="Dunkelolivgreen" 			text="Dark olive green new"/> 		-->
+        <!--		<text name="DunkelolivgreenOLD" 		text="Dark olive green old"/> 		-->
+        <!--		<text name="DunkelolivgreenMATTE" 		text="Dark olive green matte"/> 	-->
+        <!--		<text name="DunkelolivgreenSATIN" 		text="Dark olive green Satin"/> 	-->
+        <!--		<text name="smaragdgreen" 				text="Emerald green new"/> 		-->
+        <!--		<text name="smaragdgreenOLD" 			text="Emerald green old"/> 		-->
+        <!--		<text name="smaragdgreenMATTE" 			text="Emerald green matte"/> 	-->
+        <!--		<text name="smaragdgreenSATIN" 			text="Emerald green Satin"/> 	-->
+        <!--		<text name="JenzGreen" 					text="Jenz green new"/>		-->
+        <!--		<text name="JenzGreenOLD" 				text="Jenz green old"/>-->
+        <!--		<text name="JenzGreenMATTE"				text="Jenz green matte"/>-->
+        <!--		<text name="JenzGreenSATIN"				text="Jenz green Satin"/>	-->
+        <!--		<text name="GreenBlue" 					text="Perlenzian new"/>  			-->
+        <!--		<text name="GreenBlueOLD" 				text="Perlenzian old"/>  			-->
+        <!--		<text name="GreenBlueMATTE" 			text="Perlenzian matte"/>  		-->
+        <!--		<text name="GreenBlueSATIN" 			text="Perlenzian Satin"/>  	-->
+        <!--		<text name="boeckmann" 					text="Azure blue new"/> 		-->
+        <!--		<text name="boeckmannOLD" 				text="Azure blue old"/> 		-->
+        <!--		<text name="boeckmannMATTE" 			text="Azure blue matte"/> 	-->
+        <!--		<text name="boeckmannSATIN" 			text="Azure blue Satin"/> 	-->
+        <!--		<text name="LightBlue1" 				text="Turquoise blue new"/>  			-->
+        <!--		<text name="LightBlue1SPZ" 				text="Turquoise blue special"/>  			-->
+        <!--		<text name="LightBlue1MATTE" 			text="Turquoise blue matte"/>  		-->
+        <!--		<text name="LightBlue1SATIN" 			text="Turquoise blue Satin"/>  	-->
+        <!--		<text name="Blue2" 						text="Blue green new"/>  			-->
+        <!--		<text name="Blue2OLD" 					text="Blue green old"/>  			-->
+        <!--		<text name="Blue2MATTE" 				text="Blue green matte"/>  		-->
+        <!--		<text name="Blue2SATIN" 				text="Blue green Satin"/>  -->
+        <!--		<text name="Perlnachtblau" 				text="Pearl night blue new"/> 		-->
+        <!--		<text name="PerlnachtblauOLD" 			text="Pearl night blue old"/> 		-->
+        <!--		<text name="PerlnachtblauMATTE" 		text="Pearl night blue matte"/> 	-->
+        <!--		<text name="PerlnachtblauSATIN" 		text="Pearl night blue Satin"/> 	-->
+        <!--		<text name="BLUE3" 						text="Sky blue new"/>			-->
+        <!--		<text name="BLUE3OLD" 					text="Sky blue old"/>-->
+        <!--		<text name="BLUE3MATTE"					text="Sky blue matte"/>-->
+        <!--		<text name="BLUE3SATIN"					text="Sky blue Satin"/>-->
+        <!--		<text name="STRAUTMANNRED" 	   			text="Oriental red new" />-->
+        <!--		<text name="STRAUTMANNREDOLD"   		text="Oriental red old" />-->
+        <!--		<text name="STRAUTMANNREDMATTE"  		text="Oriental red matte" />-->
+        <!--		<text name="STRAUTMANNREDSATIN" 	 	text="Oriental red Satin"/>		-->
+        <!--		<text name="Red"						text="Pure red new"/>		-->
+        <!--		<text name="RedOLD"						text="Pure red old"/>-->
+        <!--		<text name="REDMATTE"					text="Pure red matte"/>		-->
+        <!--		<text name="REDSATIN"					text="Pure red Satin"/>	-->
+        <!--		<text name="HARDIRED"					text="Strawberry red new"/>		-->
+        <!--		<text name="HARDIREDOLD"				text="Strawberry red old"/>-->
+        <!--		<text name="HARDIREDMATTE"				text="Strawberry red matte"/>		-->
+        <!--		<text name="HARDIREDSATIN"				text="Strawberry red Satin"/>	-->
+        <!--		<text name="ClaasRED"					text="Red orange new"/>		-->
+        <!--		<text name="ClaasREDOLD"				text="Red orange old"/>-->
+        <!--		<text name="ClaasREDMATTE"				text="Red orange matte"/>		-->
+        <!--		<text name="ClaasREDSATIN"				text="Red orange Satin"/>	-->
+        <!--		<text name="karmesinrot" 				text="Carmine red new"/> 		-->
+        <!--		<text name="karmesinrotOLD" 			text="Carmine red old"/> 		-->
+        <!--		<text name="karmesinrotMATTE" 			text="Carmine red matte"/> 	-->
+        <!--		<text name="karmesinrotSATIN" 			text="Carmine red Satin"/> 	-->
+        <!--		<text name="LIZARD_PINK1" 				text="Pink new"/>		-->
+        <!--		<text name="LIZARD_PINK1OLD" 			text="Pink old"/>-->
+        <!--		<text name="LIZARD_PINK1MATTE"			text="Pink matte"/>-->
+        <!--		<text name="LIZARD_PINK1SATIN"			text="Pink Satin"/>	-->
+        <!--		<text name="YELLOW" 					text="Bright yellow new"/>			-->
+        <!--		<text name="YELLOWOLD" 					text="Bright yellow old"/>			-->
+        <!--		<text name="YELLOWMATTE"				text="Bright yellow matte"/>		-->
+        <!--		<text name="YELLOWSATIN"				text="Bright yellow Satin"/>		-->
+        <!--		<text name="KRONEYELLOW"  				text="Signal yellow new"/>			-->
+        <!--		<text name="KRONEYELLOWOLD" 			text="Signal yellow old"/>	-->
+        <!--		<text name="KRONEYELLOWMATTE"			text="Signal yellow matte"/>-->
+        <!--		<text name="KRONEYELLOWSATIN"			text="Signal yellow Satin"/>	-->
+        <!--		<text name="ClaasYELLOW"  				text="Light ivory new"/>			-->
+        <!--		<text name="ClaasYELLOWOLD" 			text="Light ivory old"/>	-->
+        <!--		<text name="ClaasYELLOWMATTE"			text="Light ivory matte"/>-->
+        <!--		<text name="ClaasYELLOWSATIN"			text="Light ivory Satin"/>	-->
+        <!--		<text name="KAWECOORANGE"  				text="Bright bright orange new"/>			-->
+        <!--		<text name="KAWECOORANGEOLD" 			text="Bright bright orange old"/>	-->
+        <!--		<text name="KAWECOORANGEMATTE"			text="Bright bright orange matte"/>-->
+        <!--		<text name="KAWECOORANGESATIN"			text="Bright bright orange Satin"/>	-->
+        <!--		<text name="ORANGE" 					text="Deep orange new"/>		-->
+        <!--		<text name="ORANGEOLD" 					text="Deep orange old"/>		-->
+        <!--		<text name="ORANGEMATTE"				text="Deep orange matte"/>	-->
+        <!--		<text name="ORANGESATIN"				text="Deep orange Satin"/>		-->
+        <!--		<text name="OLIVE" 						text="Grey-beige new"/>-->
+        <!--		<text name="OLIVEOLD"		    		text="Grey-beige old"/>-->
+        <!--		<text name="OLIVEMATTE" 				text="Grey-beige matte"/>-->
+        <!--		<text name="OLIVESATIN" 				text="Grey-beige Satin"/>	-->
+        <!--		<text name="perlweiss" 					text="Pearl white new"/> 		-->
+        <!--		<text name="perlweissOLD" 				text="Pearl white old"/> 		-->
+        <!--		<text name="perlweissMATTE" 			text="Pearl white matte"/> 	-->
+        <!--		<text name="perlweissSATIN" 			text="Pearl white Satin"/> 			-->
+        <!--		<text name="WHITE" 						text="Pure white new"/>-->
+        <!--		<text name="WHITEOLD" 					text="Pure white old"/>-->
+        <!--		<text name="WHITEMATTE"					text="Pure white matte"/>-->
+        <!--		<text name="WHITESATIN"					text="Pure white Satin"/>	-->
+        <!--		<text name="KRONEWHITE" 				text="Papyrus white new"/>-->
+        <!--		<text name="KRONEWHITEOLD" 				text="Papyrus white old"/>-->
+        <!--		<text name="KRONEWHITEMATTE"			text="Papyrus white matte"/>-->
+        <!--		<text name="KRONEWHITESATIN"			text="Papyrus white Satin"/>	-->
+        <!--		<text name="BLACK"						text="Jet black new"/>-->
+        <!--		<text name="BLACKOLD"					text="Jet black old"/>-->
+        <!--		<text name="BLACKMATTE"					text="Jet black matte"/>-->
+        <!--		<text name="BLACKSATIN"					text="Jet black Satin"/>	-->
+        <!--		<text name="FORTSCHRITTBLACK"			text="Graphite black new"/>-->
+        <!--		<text name="FORTSCHRITTBLACKOLD"		text="Graphite black old"/>-->
+        <!--		<text name="FORTSCHRITTBLACKMATTE"		text="Graphite black matte"/>-->
+        <!--		<text name="FORTSCHRITTBLACKSATIN"		text="Graphite black Satin"/>	-->
+        <!--		<text name="GunMetal" 	  				text="Graphite grey new"/>			-->
+        <!--		<text name="GunMetalOLD"   				text="Graphite grey old"/>	-->
+        <!--		<text name="GunMetalMATTE" 				text="Graphite grey matte"/>		-->
+        <!--		<text name="GunMetalSATIN" 				text="Graphite grey Satin"/>	-->
+        <!--		<text name="DeepBlue" 					text="Blue grey new"/>			-->
+        <!--		<text name="DeepBlueOLD" 				text="Blue grey old"/>		-->
+        <!--		<text name="DeepBlueMATTE" 				text="Blue grey matte"/>	-->
+        <!--		<text name="DeepBlueSTATIN" 			text="Blue grey Satin"/>		-->
+        <!--		<text name="HAWEGREY" 					text="Dusty grey new"/>	-->
+        <!--		<text name="HAWEGREYOLD" 				text="Dusty grey old"/>			-->
+        <!--		<text name="HAWEGREYMATTE" 				text="Dusty grey matte"/>	-->
+        <!--		<text name="HAWEGREYSATIN" 				text="Dusty grey Satin"/>	-->
+        <!--		<text name="KRONEGREY" 					text="Signal grey new"/>	-->
+        <!--		<text name="KRONEGREYOLD" 				text="Signal grey old"/>			-->
+        <!--		<text name="KRONEGREYMATTE" 			text="Signal grey matte"/>	-->
+        <!--		<text name="KRONEGREYSATIN" 			text="Signal grey"/>	-->
+        <!--		<text name="STAINLESSSTEEL" 			text="Stainless steel"/>-->
+        <!--		<text name="ZINC"						text="Galvanized"/>-->
+        <!--		<text name="CHROME" 	    			text="Chrome"/>-->
+        <!--		<text name="Silver" 					text="Silver grey"/>-->
+        <!--		-->
+        <!--		&lt;!&ndash; Objekte &ndash;&gt;-->
+        <!--		<text name="frigoflag" text="Frigo Block Flag"/>-->
+    </texts>
+</l10n>

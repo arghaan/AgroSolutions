@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="trailer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../../../../shared/xml/schema/vehicle.xsd">
+
+    <storeData>
+        <name>$l10n_bulk_SB</name>
+        <functions>
+            <function>$l10n_function_bulk_SB</function>
+        </functions>
+        <specs>
+            <weight ignore="true"/>
+        </specs>
+        <image>store/bulk_SB.dds</image>
+        <price>30000</price>
+        <lifetime>800</lifetime>
+        <rotation>0</rotation>
+        <brand>SYRIUS</brand>
+        <category>syrius_agro</category>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_bulk_SB</typeDesc>
+        <filename>vehicles/bulk_SB.i3d</filename>
+        <sounds volumeFactor="1.8"/>
+        <size width="3.00" length="9"/>
+        <components maxMass="18000">
+            <component centerOfMass="0 0 4" solverIterationCount="10" mass="3000"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT"/>
+    </base>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint1" jointType="implement" rootNode="main_component"
+                                lowerRotLimitScale="0 0 0" upperRotLimitScale="0 0 0" upperRotationOffset="0"
+                                lowerTransLimitScale="0 0 0" upperTransLimitScale="0 0 0" needsLowering="false"
+                                allowsLowering="false">
+                <distanceToGround lower="1.71" upper="1.71"/>
+            </inputAttacherJoint>
+            <inputAttacherJoint node="topJoint1" jointType="telehandler" rootNode="main_component" hardAttach="true"
+                                rotLimitSpring="0 0 0" rotLimitDamping="-1 -1 -1" rotLimitForceLimit="-1 -1 -1"
+                                transLimitSpring="0 0 0" transLimitDamping="1 1 1" transLimitForceLimit="-1 -1 -1"
+                                lowerRotLimitScale="0 0 0" upperRotLimitScale="0 0 0" upperRotationOffset="0"
+                                lowerTransLimitScale="0 0 0" upperTransLimitScale="0 0 0"/>
+            <inputAttacherJoint node="topJoint3" jointType="telehandler" rootNode="main_component" hardAttach="true"
+                                rotLimitSpring="0 0 0" rotLimitDamping="-1 -1 -1" rotLimitForceLimit="-1 -1 -1"
+                                transLimitSpring="0 0 0" transLimitDamping="1 1 1" transLimitForceLimit="-1 -1 -1"
+                                lowerRotLimitScale="0 0 0" upperRotLimitScale="0 0 0" upperRotationOffset="0"
+                                lowerTransLimitScale="0 0 0" upperTransLimitScale="0 0 0"/>
+            <sounds>
+                <attach template="ATTACH_01" linkNode="attacherJoint1"/>
+            </sounds>
+        </inputAttacherJoints>
+        <brakeForce force="0.8"/>
+    </attachable>
+
+    <ai>
+        <agentAttachment width="0.85" height="1.0" length="0.6" lengthOffset="-0.1"/>
+    </ai>
+
+    <connectionHoses>
+        <hose inputAttacherJointIndices="1" type="electric" node="electricCable" length="0.3" diameter="0.008"
+              straighteningFactor="1">
+            <objectChange node="electric_cab" rotationActive="0 0 0" rotationInactive="-90 0 0"/>
+            <objectChange node="electric_attached" visibilityActive="true" visibilityInactive="false"/>
+        </hose>
+    </connectionHoses>
+    <animations>
+        <animation name="moveSupport">
+            <part node="FussRV" startTime="0" endTime="0.5" startTrans="-0.638 0.025 2.495" startRot="90 0 0"
+                  endTrans="-0.835 0.025 2.495" endRot="0 0 0"/>
+            <part node="FussLV" startTime="0" endTime="0.5" startTrans="0.638 0.025 -2.495" startRot="-90 0 0"
+                  endTrans="0.835 0.025 -2.495" endRot="0 0 0"/>
+            <part node="FussHR" startTime="0" endTime="0.5" startTrans="-0.638 0.025 -2.495" startRot="-90 0 0"
+                  endTrans="-0.835 0.025 -2.495" endRot="0 0 0"/>
+            <part node="FussHL" startTime="0" endTime="0.5" startTrans="0.638 0.025 2.495" startRot="90 0 0"
+                  endTrans="0.835 0.025 2.495" endRot="0 0 0"/>
+
+            <part node="strebe1" startTime="0" endTime="0.5" startRot="180 0 0" endRot="60 0 0"/>
+            <part node="strebe2" startTime="0" endTime="0.5" startRot="-180 0 0" endRot="-60 0 0"/>
+            <part node="strebe3" startTime="0" endTime="0.5" startRot="-180 0 0" endRot="-60 0 0"/>
+            <part node="strebe4" startTime="0" endTime="0.5" startRot="180 0 0" endRot="60 0 0"/>
+            <part node="Fuss_collis" startTime="0.26" endTime="0.5" startTrans="0 1.618 0" endTrans="0 0 0"/>
+            <sound template="clackVar1" startTime="0" volumeScale="2.8" pitchScale="0.7"/>
+            <sound template="clackVar1" startTime="0.2" volumeScale="2.8" pitchScale="0.7"/>
+            <sound template="clackVar1" startTime="0.4" volumeScale="2.8" pitchScale="0.7"/>
+            <part node="Fuss_colliRV" startTime="0" endTime="0.25" startTrans="-1.203 -1.075 3.442"
+                  endTrans="-1.523 -1.075 2.496"/>
+            <part node="Fuss_colliLV" startTime="0" endTime="0.25" startTrans="1.203 -1.075 3.442"
+                  endTrans="1.523 -1.075 2.496"/>
+            <part node="Fuss_colliRH" startTime="0" endTime="0.25" startTrans="-1.203 -1.075 -3.442"
+                  endTrans="-1.523 -1.075 -2.496"/>
+            <part node="Fuss_colliLH" startTime="0" endTime="0.25" startTrans="1.203 -1.075 -3.442"
+                  endTrans="1.523 -1.075 -2.496"/>
+        </animation>
+        <animation name="tipAnimationBack">
+            <part node="Rod_r" startTime="0.3" endTime="1.0" startRot="0 0 0" endRot="0 -90 0"/>
+            <part node="Rod_l" startTime="0.3" endTime="1.0" startRot="0 0 0" endRot="0 90 0"/>
+            <part node="Door_r" startTime="1" endTime="3" startRot="0 0 0" endRot="0 179 0"/>
+            <part node="Door_l" startTime="1" endTime="3" startRot="0 0 0" endRot="0 -179 0"/>
+            <sound template="foldStartSm01" startTime="0.3" volumeScale="2.8" pitchScale="0.7"/>
+            <sound template="metalDoorsOpen" startTime="1" direction="1" volumeScale="3" pitchScale="0.9"/>
+            <sound template="metalDoorsLoop" startTime="1.2" endTime="2.79" volumeScale="4.4" pitchScale="0.7"
+                   fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="metalDoorsClose" startTime="2.8" direction="1" volumeScale="3" pitchScale="0.9"/>
+        </animation>
+        <animation name="toggleCover">
+            <part node="wickler" startTime="0" endTime="5" startRot="0 0 0" endRot="3600 0 0"/>
+            <part node="wicklung" startTime="0" endTime="5" startScale="1 0.75 0.75" endScale="1 5 5"/>
+            <part node="plane" startTime="0" endTime="5" startScale="1 1 1" endScale="1 1 0"/>
+            <part node="planenschiene" startTime="0" endTime="5" startTrans="0 2.521 -3.361" endTrans="0 2.521 3.186"/>
+
+            <sound template="COTTON_LOADER" startTime="0.01" endTime="4.99" linkNode="main_component"/>
+        </animation>
+    </animations>
+    <foldable>
+        <foldingConfigurations>
+            <foldingConfiguration>
+                <foldingParts startMoveDirection="1" posDirectionText="$l10n_action_supportDown"
+                              negDirectionText="$l10n_action_supportUp" allowUnfoldingByAI="false">
+                    <foldingPart animationName="moveSupport" speedScale="1"/>
+                </foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" fillTypeCategories="bulk" capacity="600000">
+                        <fillRootNode node="0>"/>
+                        <exactFillRootNode node="exactFillRootNode"/>
+                        <dashboard displayType="TEXT" valueType="fillLevel" node="hudFillLevel" textColor="1 1 1 1"
+                                   textSize="0.035" textMask="00000" font="GENERIC"/>
+                        <autoAimTargetNode node="fillAutoAimTarget" startZ="-0.5" endZ="-5" invert="false"
+                                           fillUnitIndex="1" startPercentage="25"/>
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+
+    <fillVolume>
+        <fillVolumeConfigurations>
+            <fillVolumeConfiguration>
+                <volumes>
+                    <volume node="fillVolume" maxDelta="0.15" maxAllowedHeapAngle="10" fillUnitIndex="1"/>
+                </volumes>
+            </fillVolumeConfiguration>
+        </fillVolumeConfigurations>
+        <unloadInfos>
+            <unloadInfo>
+                <node node="unloadInfoBack" width="1.0" length="1.7"/>
+            </unloadInfo>
+        </unloadInfos>
+        <heightNodes>
+            <heightNode fillVolumeIndex="1">
+                <refNode node="fillVolumeHeightNode1"/>
+                <refNode node="fillVolumeHeightNode2"/>
+                <node node="grainEffectBack" baseScale="1 1 1" transAxis="0 0.92 0"/>
+                <node node="particleEmitter" baseScale="1 0.5 1" scaleAxis="0 1.0 0" transAxis="0 0 0"/>
+            </heightNode>
+        </heightNodes>
+    </fillVolume>
+
+    <trailer>
+        <trailerConfigurations>
+            <trailerConfiguration>
+                <trailer>
+                    <tipSide name="$l10n_info_tipSideBack" dischargeNodeIndex="1" unloadInfoIndex="1">
+                        <animation name="tipAnimationBack" speedScale="1.2" startTipTime="0.5"/>
+                    </tipSide>
+                </trailer>
+            </trailerConfiguration>
+        </trailerConfigurations>
+    </trailer>
+
+    <dischargeable>
+        <dischargeNode node="dischargeNodeBack" emptySpeed="12000" fillUnitIndex="1" unloadInfoIndex="1">
+            <info width="2.4" length="0.5" zOffset="0.5"/>
+            <effects>
+                <effectNode effectClass="TipEffect">
+                    <effectNode effectNode="particleEmitter" effectClass="ParticleEffect"
+                                materialType="unloadingParticle"/>
+                    <effectNode effectNode="grainEffectBack" materialType="unloading" materialTypeId="1" fadeTime="0.5"
+                                extraDistanceNode="dischargeNodeBack" extraDistance="0.35"/>
+                </effectNode>
+                <effectNode effectNode="smokeEffectBack" materialType="unloadingSmoke" materialTypeId="1"
+                            fadeTime="0.5"/>
+            </effects>
+        </dischargeNode>
+    </dischargeable>
+
+    <cover>
+        <coverConfigurations>
+            <coverConfiguration openCoverWhileTipping="true">
+                <cover openAnimation="toggleCover" fillUnitIndices="1"/>
+            </coverConfiguration>
+        </coverConfigurations>
+    </cover>
+
+    <baseMaterial>
+        <material name="Rahmen_mat" baseNode="Rahmen">
+            <shaderParameter name="colorMat0" value="FIAT_WHITEPAINT"/>
+            <shaderParameter name="colorMat1" value="FIAT_WHITEPAINT"/>
+        </material>
+        <material name="nonfood_mat" baseNode="Door_r">
+            <shaderParameter name="colorMat0" value="FIAT_WHITEPAINT"/>
+        </material>
+        <material name="bulk_mat" baseNode="bulk_wb">
+            <shaderParameter name="colorMat0" value="FIAT_WHITEPAINT"/>
+        </material>
+        <material name="cover_mat" baseNode="planend">
+            <shaderParameter name="colorMat2" value="KROEGER_YELLOW1"/>
+        </material>
+        <material name="cover_mat" baseNode="wicklung">
+            <shaderParameter name="colorMat2" value="KROEGER_YELLOW1"/>
+        </material>
+        <material name="cover_mat" baseNode="plane">
+            <shaderParameter name="colorMat2" value="KROEGER_YELLOW1"/>
+        </material>
+    </baseMaterial>
+
+    <baseMaterialConfigurations price="3000" useDefaultColors="true" defaultColorIndex="0">
+        <baseMaterialConfiguration name="WHITE" color="FIAT_WHITEPAINT"/>
+        <material name="Rahmen_mat" shaderParameter="colorMat0"/>
+        <material name="Rahmen_mat" shaderParameter="colorMat1"/>
+        <material name="nonfood_mat" shaderParameter="colorMat0"/>
+        <material name="bulk_mat" shaderParameter="colorMat0"/>
+
+    </baseMaterialConfigurations>
+
+    <designMaterialConfigurations title="$l10n_Plane" price="200" defaultColorIndex="0">
+        <designMaterialConfiguration name="YELLOW" color="KROEGER_YELLOW1" material="5"/>
+        <designMaterialConfiguration name="DARKGREY" color="UNVERFETH_GREY" material="5"/>
+        <designMaterialConfiguration name="BLUE" color="FORTSCHRITT_BLUE" material="5"/>
+        <designMaterialConfiguration name="GREEN" color="FENDT_OLDGREEN1" material="5"/>
+        <designMaterialConfiguration name="HOT" color="STARA_ORANGE" material="5"/>
+        <material name="cover_mat" shaderParameter="colorMat2"/>
+    </designMaterialConfigurations>
+
+    <designConfigurations title="$l10n_configuration_Logo">
+        <designConfiguration name="$l10n_configuration_without" price="0">
+            <objectChange node="Logo_left" visibilityActive="false"/>
+            <objectChange node="Logo_right" visibilityActive="false"/>
+            <objectChange node="Logo_doorleft" visibilityActive="false"/>
+            <objectChange node="Logo_doorright" visibilityActive="false"/>
+        </designConfiguration>
+        <designConfiguration name="$l10n_configuration_syrius" price="0">
+            <objectChange node="Logo_left" visibilityActive="true"/>
+            <objectChange node="Logo_right" visibilityActive="true"/>
+            <objectChange node="Logo_doorleft" visibilityActive="true"/>
+            <objectChange node="Logo_doorright" visibilityActive="true"/>
+        </designConfiguration>
+    </designConfigurations>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+
+
+    <i3dMappings>
+        <i3dMapping id="main_component" node="0>"/>
+        <i3dMapping id="attacherJoint1" node="0>0|1|0"/>
+        <i3dMapping id="topJoint1" node="0>0|1|1|0"/>
+        <i3dMapping id="topJoint3" node="0>0|1|2|0"/>
+        <i3dMapping id="support" node="0>0|0"/>
+
+        <!-- support-->
+        <i3dMapping id="FussRV" node="0>0|0|0"/>
+        <i3dMapping id="FussLV" node="0>0|0|1"/>
+        <i3dMapping id="FussHR" node="0>0|0|2"/>
+        <i3dMapping id="FussHL" node="0>0|0|3"/>
+        <i3dMapping id="strebe1" node="0>0|0|0|0"/>
+        <i3dMapping id="strebe2" node="0>0|0|1|0"/>
+        <i3dMapping id="strebe3" node="0>0|0|2|0"/>
+        <i3dMapping id="strebe4" node="0>0|0|3|0"/>
+        <i3dMapping id="Fuss_wb1" node="0>0|0|0|1"/>
+        <i3dMapping id="Fuss_wb2" node="0>0|0|1|1"/>
+        <i3dMapping id="Fuss_wb3" node="0>0|0|2|1"/>
+        <i3dMapping id="Fuss_wb4" node="0>0|0|3|1"/>
+        <i3dMapping id="Fuss_collis" node="0>0|0|4"/>
+        <i3dMapping id="Fuss_colliRV" node="0>0|0|4|0"/>
+        <i3dMapping id="Fuss_colliLV" node="0>0|0|4|1"/>
+        <i3dMapping id="Fuss_colliRH" node="0>0|0|4|2"/>
+        <i3dMapping id="Fuss_colliLH" node="0>0|0|4|3"/>
+
+
+        <!-- Conti-->
+        <i3dMapping id="Rahmen" node="0>0"/>
+
+        <i3dMapping id="bulk_wb" node="0>0|4"/>
+        <i3dMapping id="planend" node="0>0|4|1"/>
+        <i3dMapping id="wickler" node="0>0|4|0|0"/>
+        <i3dMapping id="wicklung" node="0>0|4|0|0|0"/>
+        <i3dMapping id="plane" node="0>0|4|0|1"/>
+        <i3dMapping id="planenschiene" node="0>0|4|0|2"/>
+
+        <i3dMapping id="Rod_r" node="0>0|4|2|0|0"/>
+        <i3dMapping id="Rod_l" node="0>0|4|2|1|0"/>
+        <i3dMapping id="Door_r" node="0>0|4|2|0"/>
+        <i3dMapping id="Door_l" node="0>0|4|2|1"/>
+        <i3dMapping id="hudFillLevel" node="0>0|4|5|2"/>
+        <i3dMapping id="Logos" node="0>0|4|6"/>
+        <i3dMapping id="Logo_left" node="0>0|4|6|0"/>
+        <i3dMapping id="Logo_right" node="0>0|4|6|1"/>
+        <i3dMapping id="Logo_doorleft" node="0>0|4|2|1|2"/>
+        <i3dMapping id="Logo_doorright" node="0>0|4|2|0|2"/>
+        <i3dMapping id="electric_attached" node="0>0|4|7|0|0|0|0"/>
+        <i3dMapping id="electric_cab" node="0>0|4|7|0|0|1"/>
+        <i3dMapping id="electricCable" node="0>0|4|7|0|0|0|0|0"/>
+        <i3dMapping id="fillVolume" node="0>0|5|0|0"/>
+        <i3dMapping id="unloadInfoBack" node="0>0|5|1|0"/>
+        <i3dMapping id="fillVolumeHeightNode1" node="0>0|5|2|0|0"/>
+        <i3dMapping id="fillVolumeHeightNode2" node="0>0|5|2|0|1"/>
+        <i3dMapping id="dischargeNodeBack" node="0>0|5|3|0"/>
+        <i3dMapping id="effectNodesBack" node="0>0|5|5|0|0"/>
+        <i3dMapping id="grainEffectBack" node="0>0|5|5|0|0|0"/>
+        <i3dMapping id="smokeEffectBack" node="0>0|5|5|0|0|1"/>
+        <i3dMapping id="particleEmitter" node="0>0|5|5|0|1|0"/>
+
+        <i3dMapping id="exactFillRootNode" node="0>0|5|4|0"/>
+        <i3dMapping id="fillAutoAimTarget" node="0>0|5|4|1"/>
+    </i3dMappings>
+
+</vehicle>

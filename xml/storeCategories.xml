@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<categories>
+    <!-- TOOLS -->
+    <!--	<category type="VEHICLE" name="cargosystem_trucks"                  title="$l10n_category_cargosystem_trucks"                image="store/cargosystem_trucks.dds" />-->
+    <!--	<category type="TOOL" name="cargosystem_trailer"                  title="$l10n_category_cargosystem_trailer"                image="store/cargosystem_trailer.dds" />-->
+    <category type="TOOL" name="syrius_agro" title="$l10n_category_syrius_agro" image="mod_icon.dds"/>
+</categories>
