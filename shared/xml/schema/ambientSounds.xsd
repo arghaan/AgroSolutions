@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="g_hyphen">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="-"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_float_or_hyphen">
+        <xs:union memberTypes="xs:float g_hyphen"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_float">
+        <xs:list itemType="g_float_or_hyphen"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_string">
+        <xs:annotation><xs:appinfo><typeStr>String</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_l10n_string">
+        <xs:annotation><xs:appinfo><typeStr>String or l10n key</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_float">
+        <xs:annotation><xs:appinfo><typeStr>Float</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:float"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_angle">
+        <xs:annotation><xs:appinfo><typeStr>Angle</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:float"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_time">
+        <xs:annotation><xs:appinfo><typeStr>Time in seconds</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:float"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_int">
+        <xs:annotation><xs:appinfo><typeStr>Integer</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:integer"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_bool">
+        <xs:annotation><xs:appinfo><typeStr>Boolean</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="true|false"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_node_index">
+        <xs:annotation><xs:appinfo><typeStr>Index to i3d node or i3d mapping identifier</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_node_indices">
+        <xs:annotation><xs:appinfo><typeStr>List of indices to i3d nodes or i3d mapping identifiers</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_2">
+        <xs:annotation><xs:appinfo><typeStr>Multiple values (x, y)</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="g_vector_float">
+            <xs:pattern value="\S+ \S+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_3">
+        <xs:annotation><xs:appinfo><typeStr>Multiple values (x, y, z)</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="g_vector_float">
+            <xs:pattern value="\S+ \S+ \S+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_4">
+        <xs:annotation><xs:appinfo><typeStr>Multiple values (x, y, z, w)</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="g_vector_float">
+            <xs:pattern value="\S+ \S+ \S+ \S+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_n">
+        <xs:annotation><xs:appinfo><typeStr>Multiple values</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="g_vector_float"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_trans">
+        <xs:annotation><xs:appinfo><typeStr>Translation values (x, y, z)</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="g_vector_float">
+            <xs:pattern value="\S+ \S+ \S+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_rot">
+        <xs:annotation><xs:appinfo><typeStr>Rotation values (x, y, z)</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="g_vector_float">
+            <xs:pattern value="\S+ \S+ \S+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_rot_2">
+        <xs:annotation><xs:appinfo><typeStr>Rotation values (x, y)</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="g_vector_float">
+            <xs:pattern value="\S+ \S+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_vector_scale">
+        <xs:annotation><xs:appinfo><typeStr>Scale values (x, y, z)</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="g_vector_float">
+            <xs:pattern value="\S+ \S+ \S+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="g_color">
+        <xs:annotation><xs:appinfo><typeStr>Color values (r, g, b) or brand color id</typeStr></xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:element name="sound">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="ambient" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:choice maxOccurs="unbounded">
+                            <xs:element name="sample" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:choice maxOccurs="unbounded">
+                                        <xs:element name="prevent" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:attribute name="afternoon" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag afternoon</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="autumn" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag autumn</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="cloudy" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag cloudy</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="inForest" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag inForest</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="inVehicle" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag inVehicle</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="isIndoor" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag isIndoor</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="morning" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag morning</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="nearWater" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag nearWater</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="night" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag night</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="noon" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag noon</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="outVehicle" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag outVehicle</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="postNoon" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag postNoon</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="postSunrise" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag postSunrise</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="postSunset" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag postSunset</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="preNoon" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag preNoon</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="preSunrise" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag preSunrise</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="preSunset" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag preSunset</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="rain" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag rain</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="snow" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag snow</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="spring" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag spring</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="summer" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag summer</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="sun" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag sun</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="sunrise" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag sunrise</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="sunset" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag sunset</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="winter" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Prevent flag winter</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="required" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:attribute name="afternoon" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag afternoon</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="autumn" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag autumn</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="cloudy" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag cloudy</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="inForest" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag inForest</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="inVehicle" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag inVehicle</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="isIndoor" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag isIndoor</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="morning" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag morning</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="nearWater" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag nearWater</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="night" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag night</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="noon" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag noon</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="outVehicle" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag outVehicle</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="postNoon" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag postNoon</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="postSunrise" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag postSunrise</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="postSunset" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag postSunset</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="preNoon" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag preNoon</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="preSunrise" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag preSunrise</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="preSunset" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag preSunset</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="rain" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag rain</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="snow" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag snow</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="spring" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag spring</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="summer" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag summer</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="sun" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag sun</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="sunrise" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag sunrise</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="sunset" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag sunset</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="winter" type="g_bool">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Required flag winter</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="settings" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:attribute name="audioGroup" type="g_string" default="ENVIRONMENT">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The audio group the sound will be assigned to</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="fadeInTime" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The fade in time in seconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="fadeOutTime" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The fade out time in seconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="indoorVolume" type="g_float" default="0.8">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The volume if the player is indoor or in a vehicle</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxDelay" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The max delay in milliseconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxLength" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The max length time in milliseconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxLoops" type="g_int" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The maximum number of loops played once a sound is triggered</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxPitch" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The max pitch</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxRetriggerDelaySeconds" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The maximum number of seconds until the sound has to be retriggered</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxVolume" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The maxVolume if the player is outdoor</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minDelay" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The min delay in milliseconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minLength" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The min length time in milliseconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minLoops" type="g_int" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The minimum number of loops played once a sound is triggered (0 means it will play one loop)</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minPitch" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The min pitch</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minRetriggerDelaySeconds" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The minimum number of seconds until sound can be retriggred</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minVolume" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The minVolume if the player is outdoor</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="variation" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="fadeInTime" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The fade in time in seconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="fadeOutTime" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The fade out time in seconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="filename" type="g_string">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Sample filename</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="indoorVolume" type="g_float" default="0.8">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The volume if the player is indoor or in a vehicle</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxDelay" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The max delay in milliseconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxLength" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The max length time in milliseconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxLoops" type="g_int" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The maximum number of loops played once a sound is triggered</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxPitch" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The max pitch</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxVolume" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The maxVolume if the player is outdoor</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minDelay" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The min delay in milliseconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minLength" type="g_float" default="0">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The min length time in milliseconds</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minLoops" type="g_int" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The minimum number of loops played once a sound is triggered (0 means it will play one loop)</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minPitch" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The min pitch</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minVolume" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">The minVolume if the player is outdoor</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="probability" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Sample probability</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:choice>
+                                    <xs:attribute name="filename" type="g_string">
+                                        <xs:annotation><xs:documentation xml:lang="en">Sample filename</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="probability" type="g_float" default="1">
+                                        <xs:annotation><xs:documentation xml:lang="en">Sample probability</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ambient3d" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:attribute name="filename" type="g_string">
+                            <xs:annotation><xs:documentation xml:lang="en">3d Ambient sound file</xs:documentation></xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="cutting" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:choice maxOccurs="unbounded">
+                            <xs:element name="sample" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:choice maxOccurs="unbounded">
+                                        <xs:element name="loopSynthesisLoad" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:choice maxOccurs="unbounded">
+                                                    <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="modifiedValue" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Change that is applied on sample value</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="type" type="g_string">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="value" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Source value of modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:choice>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="loopSynthesisRpm" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:choice maxOccurs="unbounded">
+                                                    <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="modifiedValue" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Change that is applied on sample value</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="type" type="g_string">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="value" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Source value of modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:choice>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="lowpassCutoffFrequency" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:attribute name="indoor" type="g_float" default="5000">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Indoor lowpass cutoff frequency</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="outdoor" type="g_float" default="5000">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Outdoor lowpass cutoff frequency</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="lowpassGain" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:choice maxOccurs="unbounded">
+                                                    <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="modifiedValue" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Change that is applied on sample value</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="type" type="g_string">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="value" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Source value of modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:choice>
+                                                <xs:attribute name="indoor" type="g_float" default="0.8">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Indoor lowpass gain</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="outdoor" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Outdoor lowpass gain</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="lowpassResonance" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:attribute name="indoor" type="g_float" default="2">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Indoor lowpass resonance</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="outdoor" type="g_float" default="2">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Outdoor lowpass resonance</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="pitch" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:choice maxOccurs="unbounded">
+                                                    <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="modifiedValue" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Change that is applied on sample value</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="type" type="g_string">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="value" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Source value of modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:choice>
+                                                <xs:attribute name="indoor" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Indoor pitch</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="outdoor" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Outdoor pitch</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="randomization" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="isInside" type="g_bool" default="true">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Randomization is applied inside</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="isOutside" type="g_bool" default="true">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Randomization is applied outside</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxLowpassGain" type="g_float">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Max lowpass gain</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxPitch" type="g_float">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Max pitch</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="maxVolume" type="g_float">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Max volume</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minLowpassGain" type="g_float">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Max lowpass gain</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minPitch" type="g_float">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Max pitch</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="minVolume" type="g_float">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Min volume</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="sourceRandomization" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="file" type="g_string">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Path to sound sample</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="volume" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:choice maxOccurs="unbounded">
+                                                    <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="modifiedValue" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Change that is applied on sample value</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="type" type="g_string">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="value" type="g_float">
+                                                                <xs:annotation><xs:documentation xml:lang="en">Source value of modifier type</xs:documentation></xs:annotation>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:choice>
+                                                <xs:attribute name="indoor" type="g_float" default="0.8">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Indoor volume</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="outdoor" type="g_float" default="1">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Outdoor volume</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:choice>
+                                    <xs:attribute name="debug" type="g_bool" default="false">
+                                        <xs:annotation><xs:documentation xml:lang="en">Flag to enable debug rendering</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="fadeIn" type="g_float" default="0">
+                                        <xs:annotation><xs:documentation xml:lang="en">Fade in time in seconds</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="fadeOut" type="g_float" default="0">
+                                        <xs:annotation><xs:documentation xml:lang="en">Fade out time in seconds</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="file" type="g_string">
+                                        <xs:annotation><xs:documentation xml:lang="en">Path to sound sample</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="innerRadius" type="g_float" default="80">
+                                        <xs:annotation><xs:documentation xml:lang="en">Inner radius</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="isLocalSound" type="g_bool" default="false">
+                                        <xs:annotation><xs:documentation xml:lang="en">While set for vehicle sounds it will only play for the player currently using the vehicle</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="linkNode" type="g_node_index">
+                                        <xs:annotation><xs:documentation xml:lang="en">Link node for 3d sound</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="linkNodeOffset" type="g_vector_trans">
+                                        <xs:annotation><xs:documentation xml:lang="en">Sound source will be offset by this value to the link node</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="loops" type="g_int" default="1">
+                                        <xs:annotation><xs:documentation xml:lang="en">Number of loops (0 = infinite)</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="loopSynthesisRPMRatio" type="g_float" default="1">
+                                        <xs:annotation><xs:documentation xml:lang="en">Ratio between rpm in the gls file and actual rpm of the motor (e.g. 0.9: max. rpm in the gls file will be reached at 90% of motor rpm)</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="lowpassGainScale" type="g_float" default="1">
+                                        <xs:annotation><xs:documentation xml:lang="en">Additional lowpass gain that is applied on the volume attributes</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="name" type="g_string">
+                                        <xs:annotation><xs:documentation xml:lang="en">Cutting sample name</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="outerRadius" type="g_float" default="5">
+                                        <xs:annotation><xs:documentation xml:lang="en">Outer radius</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="parent" type="g_string">
+                                        <xs:annotation><xs:documentation xml:lang="en">Parent sample for heredity</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="pitchScale" type="g_float" default="1">
+                                        <xs:annotation><xs:documentation xml:lang="en">Additional pitch that is applied on the volume attributes</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="supportsReverb" type="g_bool" default="true">
+                                        <xs:annotation><xs:documentation xml:lang="en">Flag to disable reverb</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="template" type="g_string">
+                                        <xs:annotation><xs:documentation xml:lang="en">Sound template name</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="volumeScale" type="g_float" default="1">
+                                        <xs:annotation><xs:documentation xml:lang="en">Additional scale that is applied on the volume attributes</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="parentFile" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="attributes" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:choice maxOccurs="unbounded">
+                                        <xs:element name="clearList" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="keepIndex" type="g_int">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Index of list to keep</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="path" type="g_string">
+                                                    <xs:annotation><xs:documentation xml:lang="en">List to clear but keep one item</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="remove" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="path" type="g_string">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Path to remove from parent xml</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="path" type="g_string">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Path change in parent xml</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="value" type="g_string">
+                                                    <xs:annotation><xs:documentation xml:lang="en">Target value to set in parent file</xs:documentation></xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                        <xs:attribute name="xmlFilename" type="g_string">
+                            <xs:annotation><xs:documentation xml:lang="en">Remove vehicle if unit empty</xs:documentation></xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="surface" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:choice maxOccurs="unbounded">
+                            <xs:element name="material" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="loopCount" type="g_int">
+                                        <xs:annotation><xs:documentation xml:lang="en">Sample loop count</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="materialId" type="g_int">
+                                        <xs:annotation><xs:documentation xml:lang="en">Material id</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="name" type="g_string">
+                                        <xs:annotation><xs:documentation xml:lang="en">Material name</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="template" type="g_string">
+                                        <xs:annotation><xs:documentation xml:lang="en">Sample template</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="type" type="g_string">
+                                        <xs:annotation><xs:documentation xml:lang="en">Sample type</xs:documentation></xs:annotation>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
